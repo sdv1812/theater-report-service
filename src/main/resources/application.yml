@@ -1,5 +1,6 @@
 cloud.aws:
   region: ap-southeast-2
+  reportS3Bucket: theater-dev
 
 ---
 spring:
