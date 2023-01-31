@@ -1,6 +1,18 @@
 cloud.aws:
   region: ap-southeast-2
   reportS3Bucket: theater-dev
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:h2:file:~/theater;AUTO_SERVER=TRUE
+    driverClassName: org.h2.Driver
+    username: sa
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
 
 ---
 spring:
@@ -11,13 +23,6 @@ spring:
     url: jdbc:h2:file:~/theater;AUTO_SERVER=TRUE
     driverClassName: org.h2.Driver
     username: sa
-  jpa:
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: update
-server:
-  port: 8081
 cloud.aws:
   reportS3Bucket: theater-dev
 
@@ -30,13 +35,6 @@ spring:
     url: jdbc:h2:file:~/theater;AUTO_SERVER=TRUE
     driverClassName: org.h2.Driver
     username: sa
-  jpa:
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: update
-server:
-  port: 8081
 cloud.aws:
   reportS3Bucket: theater-stg
 
@@ -49,12 +47,5 @@ spring:
     url: jdbc:h2:file:~/theater;AUTO_SERVER=TRUE
     driverClassName: org.h2.Driver
     username: sa
-  jpa:
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: update
-server:
-  port: 8081
 cloud.aws:
   reportS3Bucket: theater-prod
