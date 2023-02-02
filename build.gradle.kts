@@ -34,6 +34,7 @@ dependencies {
 	implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.10")
 	implementation("aws.smithy.kotlin:http-client-engine-okhttp-jvm:0.14.3")
 	implementation("aws.sdk.kotlin:s3:0.19.4-beta")
+	implementation("aws.sdk.kotlin:dynamodb:0.19.4-beta")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
