@@ -1,6 +1,7 @@
 cloud.aws:
   region: ap-southeast-2
   reportS3Bucket: theater-dev
+  reportDynamoDb: theater-premium-report-dev
 server:
   port: 8081
 spring:
@@ -25,6 +26,7 @@ spring:
     username: sa
 cloud.aws:
   reportS3Bucket: theater-dev
+  reportDynamoDb: theater-premium-report-dev
 
 ---
 spring:
@@ -37,6 +39,7 @@ spring:
     username: sa
 cloud.aws:
   reportS3Bucket: theater-stg
+  reportDynamoDb: theater-premium-report-stg
 
 ---
 spring:
@@ -49,3 +52,4 @@ spring:
     username: sa
 cloud.aws:
   reportS3Bucket: theater-prod
+  reportDynamoDb: theater-premium-report-stg
