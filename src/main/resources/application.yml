@@ -6,9 +6,9 @@ server:
   port: 8081
 spring:
   datasource:
-    url: jdbc:h2:file:~/theater;AUTO_SERVER=TRUE
-    driverClassName: org.h2.Driver
-    username: sa
+    url: jdbc-secretsmanager:postgresql://theater-db-dev.c0gmxvr41yrz.ap-southeast-2.rds.amazonaws.com:5432/theater
+    driverClassName: com.amazonaws.secretsmanager.sql.AWSSecretsManagerPostgreSQLDriver
+    username: rds!db-8794b5e6-6537-448e-b263-d3840d21d0e4
   jpa:
     properties:
       hibernate:
@@ -21,9 +21,9 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:h2:file:~/theater;AUTO_SERVER=TRUE
-    driverClassName: org.h2.Driver
-    username: sa
+    url: jdbc-secretsmanager:postgresql://theater-db-dev.c0gmxvr41yrz.ap-southeast-2.rds.amazonaws.com:5432/theater
+    driverClassName: com.amazonaws.secretsmanager.sql.AWSSecretsManagerPostgreSQLDriver
+    username: rds!db-8794b5e6-6537-448e-b263-d3840d21d0e4
 cloud.aws:
   reportS3Bucket: theater-dev
   reportDynamoDb: theater-premium-report-dev
@@ -34,9 +34,9 @@ spring:
     activate:
       on-profile: staging
   datasource:
-    url: jdbc:h2:file:~/theater;AUTO_SERVER=TRUE
-    driverClassName: org.h2.Driver
-    username: sa
+    url: jdbc-secretsmanager:postgresql://theater-db-dev.c0gmxvr41yrz.ap-southeast-2.rds.amazonaws.com:5432/theater
+    driverClassName: com.amazonaws.secretsmanager.sql.AWSSecretsManagerPostgreSQLDriver
+    username: rds!db-8794b5e6-6537-448e-b263-d3840d21d0e4
 cloud.aws:
   reportS3Bucket: theater-stg
   reportDynamoDb: theater-premium-report-stg
@@ -47,9 +47,9 @@ spring:
     activate:
       on-profile: prod
   datasource:
-    url: jdbc:h2:file:~/theater;AUTO_SERVER=TRUE
-    driverClassName: org.h2.Driver
-    username: sa
+    url: jdbc-secretsmanager:postgresql://theater-db-dev.c0gmxvr41yrz.ap-southeast-2.rds.amazonaws.com:5432/theater
+    driverClassName: com.amazonaws.secretsmanager.sql.AWSSecretsManagerPostgreSQLDriver
+    username: rds!db-8794b5e6-6537-448e-b263-d3840d21d0e4
 cloud.aws:
   reportS3Bucket: theater-prod
   reportDynamoDb: theater-premium-report-stg

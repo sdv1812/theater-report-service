@@ -29,13 +29,13 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactive")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	implementation("com.h2database:h2")
 	implementation("com.google.guava:guava:31.1-jre")
 	implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.10")
 	implementation("aws.smithy.kotlin:http-client-engine-okhttp-jvm:0.14.3")
 	implementation("aws.sdk.kotlin:s3:0.19.4-beta")
 	implementation("aws.sdk.kotlin:dynamodb:0.19.4-beta")
-	runtimeOnly("org.postgresql:postgresql")
+	implementation("org.postgresql:postgresql")
+	implementation("com.amazonaws.secretsmanager:aws-secretsmanager-jdbc:1.0.8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
