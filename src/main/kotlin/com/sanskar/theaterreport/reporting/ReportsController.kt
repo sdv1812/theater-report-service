@@ -30,11 +30,6 @@ class ReportsController(
     private var awsCloudProperties: AWSCloudProperties
 ) {
 
-    private fun getListOfReports() = reportingService::class.declaredMemberFunctions.map { it.name }
-
-    @RequestMapping("")
-    fun main() = ResponseEntity.ok().body(getListOfReports())
-
     @RequestMapping("/generateReport/{report}", produces = [MediaType.APPLICATION_JSON_VALUE])
     fun getReport(@PathVariable report: String): ResponseEntity<ReportResponse> {
         val matchedReport = reportingService::class.declaredMemberFunctions.firstOrNull { it.name == report }
@@ -53,7 +48,7 @@ class ReportsController(
                     rawResult.toString()
                 )
             }
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+            return ResponseEntity.ok()
                 .body(ReportResponse("Premium report was successfully saved in dynamodb"))
         }
         runBlocking {
@@ -78,7 +73,7 @@ class ReportsController(
 
                 }
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+        return ResponseEntity.ok()
             .body(ReportResponse(" Report was successfully saved in S3"))
     }
 
