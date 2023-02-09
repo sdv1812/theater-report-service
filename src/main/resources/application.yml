@@ -3,7 +3,7 @@ cloud.aws:
   reportS3Bucket: theater-dev
   reportDynamoDb: theater-premium-report-dev
 server:
-  port: 8081
+  port: 8080
 spring:
   datasource:
     url: jdbc-secretsmanager:postgresql://theater-db-dev.c0gmxvr41yrz.ap-southeast-2.rds.amazonaws.com:5432/theater
