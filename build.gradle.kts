@@ -1,4 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.time.format.DateTimeFormatter
+import java.time.LocalDateTime
 
 plugins {
 	id("org.springframework.boot") version "3.0.1"
@@ -10,7 +12,11 @@ plugins {
 }
 
 group = "com.sanskar"
-version = "0.0.1-SNAPSHOT"
+
+val dateTime: LocalDateTime = LocalDateTime.now()
+val dateTimeFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-hh-mm-ss")
+version = dateTime.format(dateTimeFormatter)
+
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
@@ -48,4 +54,8 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.getByName<Jar>("jar") {
+	enabled = false
 }
